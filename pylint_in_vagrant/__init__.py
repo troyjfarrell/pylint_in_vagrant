@@ -31,7 +31,9 @@ def call_pylint_in_vagrant(
         argv, stdin=subprocess.PIPE, stdout=subprocess.PIPE, cwd=vagrant_dir
     ) as process:
         out, err = process.communicate()
-        return (process.returncode, out.decode("UTF-8"), err.decode("UTF-8"))
+        outs = out.decode("UTF-8") if out is not None else ""
+        errs = err.decode("UTF-8") if err is not None else ""
+        return (process.returncode, outs, errs)
 
 
 def configure() -> typing.Dict[str, typing.Any]:
@@ -82,6 +84,6 @@ def main():
         config["vagrant_cmd"], config["vagrant_dir"], args
     )
     sys.stdout.write(out)
-    if err is not None:
+    if err:
         sys.stderr.write(err)
     sys.exit(status)

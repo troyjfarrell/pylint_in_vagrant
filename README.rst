@@ -44,7 +44,7 @@ Pre-commit Use
 To use Pylint in Vagrant with pre-commit, add a configuration like this::
 
     - repo: https://github.com/troyjfarrell/pylint_in_vagrant
-      rev: v0.0.1
+      rev: v0.0.2
       hooks:
       - id: pylint_in_vagrant
         args: [/usr/local/bin/pylint]
@@ -59,7 +59,7 @@ To use Pylint in Vagrant with pre-commit to develop a Sandstorm application,
 try a configuration like this::
 
     - repo: https://github.com/troyjfarrell/pylint_in_vagrant
-      rev: v0.0.1
+      rev: v0.0.2
       hooks:
       - id: pylint_in_vagrant
         args: [--prefix=/opt/app, --vagrant-dir=.sandstorm, /opt/app/venv/bin/pylint]
