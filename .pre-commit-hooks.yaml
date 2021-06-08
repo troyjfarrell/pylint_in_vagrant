@@ -1,0 +1,8 @@
+- id: pylint_in_vagrant
+  name: Pylint in Vagrant
+  entry: pylint-in-vagrant
+  language: python
+  types: [python]
+  description: run Pylint inside Vagrant virtual machines
+  pass_filenames: true
+  require_serial: true
