@@ -22,10 +22,15 @@ def build_pylint_args(
 
 
 def call_pylint_in_vagrant(
-    vagrant_cmd: str, vagrant_dir: str, args: typing.List[str]
+    vagrant_cmd: str,
+    vagrant_dir: str,
+    args: typing.List[str],
+    directory: typing.Optional[str],
 ) -> typing.Tuple[int, str, str]:
     "Use Vagrant to run Pylint via SSH"
     argv = [vagrant_cmd, "ssh", "--"]
+    if directory is not None:
+        argv.extend(["cd", directory, "&&"])
     argv.extend(args)
     with subprocess.Popen(
         argv, stdin=subprocess.PIPE, stdout=subprocess.PIPE, cwd=vagrant_dir
@@ -51,6 +56,12 @@ def configure() -> typing.Dict[str, typing.Any]:
         type=str,
         nargs="+",
         help="files to lint with Pylint inside the virtual machine",
+    )
+    parser.add_argument(
+        "--directory",
+        metavar="directory",
+        type=str,
+        help="the path to use as the working directory inside the virtual machine",
     )
     parser.add_argument(
         "--prefix",
@@ -81,7 +92,7 @@ def main():
     config = configure()
     args = build_pylint_args(config)
     status, out, err = call_pylint_in_vagrant(
-        config["vagrant_cmd"], config["vagrant_dir"], args
+        config["vagrant_cmd"], config["vagrant_dir"], args, config["directory"]
     )
     sys.stdout.write(out)
     if err:
