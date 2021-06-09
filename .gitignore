@@ -1,3 +1,8 @@
+# Mypy type checker cache
 .mypy_cache
+# Python bytecode cache
 __pycache__
+# Python in-tree builds
+build
+# Python .egg-info files
 *.egg-info
