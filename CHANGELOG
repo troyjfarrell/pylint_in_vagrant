@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.4] - 2021-07-06
+###
+- Add setup.py to make pip and pre-commit happy
+
 ## [0.0.3] - 2021-06-09
 ### Added
 - Add support for setting Pylint working directory
@@ -17,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial release
 
+[0.0.4]: https://caravanserai.sandcats.io/shared/9XzAhG0cPgj-nlRMhirTNSWZ4XgBLvbX56aT7fPVA3S/troyjfarrell/pylint_in_vagrant/src/v0.0.4
 [0.0.3]: https://caravanserai.sandcats.io/shared/9XzAhG0cPgj-nlRMhirTNSWZ4XgBLvbX56aT7fPVA3S/troyjfarrell/pylint_in_vagrant/src/v0.0.3
 [0.0.2]: https://caravanserai.sandcats.io/shared/9XzAhG0cPgj-nlRMhirTNSWZ4XgBLvbX56aT7fPVA3S/troyjfarrell/pylint_in_vagrant/src/v0.0.2
 [0.0.1]: https://caravanserai.sandcats.io/shared/9XzAhG0cPgj-nlRMhirTNSWZ4XgBLvbX56aT7fPVA3S/troyjfarrell/pylint_in_vagrant/src/v0.0.1
